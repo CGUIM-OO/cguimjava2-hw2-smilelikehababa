@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
+ * @author TODO: B0527155 Lim Mei Shan  
  * Try to write some comments for your codes (methods, 15 points)
  */
 public class HW2 {
@@ -68,9 +68,18 @@ public class HW2 {
  */
 class Deck{
 	private ArrayList<Card> cards;
+	
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
+		for(int i=1 ; i <=4; i++)
+		{
+			for(int j=1; j<=13; j++) {
+				Card c = new Card(i,j);
+				cards.add(c);
+			}
+		}
+		
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -80,7 +89,10 @@ class Deck{
 
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
-	public void printDeck(){
+	public void printDeck() {
+		for(Card c: cards) {
+			c.printCard();
+		}
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
@@ -93,8 +105,10 @@ class Deck{
  * Description: TODO: please add description here
  */
 class Card{
-	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
-	private int rank; //1~13
+	private int suit;//Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
+	
+	private int rank;//1~13
+	
 	/**
 	 * @param s suit
 	 * @param r rank
@@ -105,6 +119,42 @@ class Card{
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
+		String strSuit = ""; 
+		String strRank = "";
+		switch(this.suit) {
+		case 1:
+			strSuit = "Clubs";
+			break;
+		case 2:
+			strSuit = "Diamonds";
+			break;
+		case 3:
+			strSuit = "Hearts";
+			break;
+		case 4:
+			strSuit = "Spades";
+			break;
+		
+		}
+		switch(this.rank) {
+		case 1:
+			strRank = "Ace";
+			break;
+		case 13: 
+			strRank = "King";
+			break;
+		case 12:
+			strRank = "Queen";
+			break;
+		case 11:
+			strRank = "Jack";
+			break;
+		default: 
+			strRank = "" + this.rank;
+			break;
+			
+		}
+		System.out.println(strSuit + "," + strRank);
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 
 	}
