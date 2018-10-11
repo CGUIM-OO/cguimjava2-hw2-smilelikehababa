@@ -64,9 +64,11 @@ public class HW2 {
 
 }
 /**
- * Description: TODO: This is to create a Class Deck, with field: cards and a method: Deck() with parameter integer nDeck, which creates an instance from ArrayList<Card>();
- * Deck method is public so that it can be used outside the Class Deck, and when it's used, printDeck will be used too to print out the cards automatically. it is voided because it simply performs 
- * the task then terminates. There's another method called getAllCards(). 
+ * Description: TODO: 
+ * Under Class Deck, we have 1 variable. As we need to create a deck of cards, hence we create a Array of cards. This is to create a Class Deck, with field: cards and a method: Deck() with parameter integer nDeck, which creates an instance from ArrayList<Card>();
+ * We also have a constructor, with an argument nDeck (Data Type: integer). This constructor add all the individual cards into the Array to form the "Deck of cards".
+ * Then, we have a void type method which will print out the cards in the Deck and terminates automatically. In which the method printCard() is used. 
+ * Lastly, we have another constructor method for getAllCards() which returns the Array type object, cards.
  */
 class Deck{
 	private ArrayList<Card> cards;
@@ -104,8 +106,11 @@ class Deck{
 	}
 }
 /**
- * Description: TODO: To create a Deck, it's good that we separate the Class Card from Class Deck. This Class has two fields: suit and rank. They are privated because For methods, it has Card(,) which has two arguments 
- * to print later, because there are 52 cards and each cards are unique. lastly, we define two methods to be used later for checking: getSuit() and getRank(). 
+ * Description: TODO: 
+ * Under Class Card, there are two variables: suit and rank. These are the characteristic of the card. We privated it because we only want to use it in this Class and not outside of this Class.
+ * Under constructor Card(int s, int r), we assigned the variable to a name, so that we can use it later. 
+ * Under the method printCard(), we initialise two new variable first to empty strings, then we assign the cases individually. 
+ * Lastly, we define two methods to be used later to get our Suit and Rank of a card.  
  */
 class Card{
 	private int suit;//Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
